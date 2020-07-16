@@ -1,0 +1,56 @@
+<!-- <nav aria-label="Page navigation example">
+    <ul class="pagination">
+      <li class="page-item">
+        <button class="page-link" href="#" aria-label="Previous" (click)="changerPagePrevious(pagination.firstPage)" [disabled]='(pagination.firstPage == pagination.currentPage) ? true : false'>
+          <span aria-hidden="true">&laquo;</span>
+        </button>
+      </li>
+      <li class="page-item"  style="cursor: pointer;" >
+        <button class="page-link" aria-label="Previous" (click)="changerPagePrevious(pagination.previousPage)" [disabled]='(pagination.firstPage == pagination.currentPage) ? true : false'>
+          <span aria-hidden="true">&lt;</span>
+        </button>
+      </li>
+      <ng-container *ngFor="let number of pageNumber">
+        <li [ngClass]="(number == pagination.currentPage)? 'page-item' : 'page-item'" ><button class="page-link" (click)="changerPage(number)" style="cursor: pointer;" >{{number}}</button></li>
+      </ng-container>
+      <li class="page-item" >
+        <button class="page-link" aria-label="Next" (click)="changerPageNext(pagination.nextPage)" [disabled]='(pagination.lastPage == pagination.currentPage) ? true : false' style="cursor: pointer;" >
+          <span aria-hidden="true">&gt;</span>
+        </button>
+      </li>
+      <li class="page-item">
+        <button class="page-link" href="#" aria-label="Next"  (click)="changerPageNext(pagination.lastPage)" [disabled]='(pagination.lastPage == pagination.currentPage) ? true : false'>
+          <span aria-hidden="true">&raquo;</span>
+        </button>
+      </li>
+    </ul>
+  </nav> -->
+
+
+  <nav aria-label="Page navigation example">
+    <ul class="pagination">
+      <li class="mr-2">
+        <button class="btn-pag-pre-001" href="#" aria-label="Previous" (click)="changerPagePrevious(pagination.firstPage)" [disabled]='(pagination.firstPage == pagination.currentPage) ? true : false'>
+          <span aria-hidden="true">&laquo;</span>
+        </button>
+      </li>
+      <li class="mr-1"  style="cursor: pointer;" >
+        <button class="btn-pag-pre-001" aria-label="Previous" (click)="changerPagePrevious(pagination.previousPage)" [disabled]='(pagination.firstPage == pagination.currentPage) ? true : false'>
+          <span aria-hidden="true">&lt;</span>
+        </button>
+      </li>
+      <ng-container *ngFor="let number of pageNumber">
+        <li [ngClass]="(number == pagination.currentPage)? 'btn-pag-num-act-001' : ''" ><button class="btn-pag-num-001" (click)="changerPage(number)" style="cursor: pointer;" >{{number}}</button></li>
+      </ng-container>
+      <li class="ml-1" >
+        <button class="btn-pag-nex-001" aria-label="Next" (click)="changerPageNext(pagination.nextPage)" [disabled]='(pagination.lastPage == pagination.currentPage) ? true : false' style="cursor: pointer;" >
+          <span aria-hidden="true">&gt;</span>
+        </button>
+      </li>
+      <li class="ml-2">
+        <button class="btn-pag-nex-001" href="#" aria-label="Next"  (click)="changerPageNext(pagination.lastPage)" [disabled]='(pagination.lastPage == pagination.currentPage) ? true : false'>
+          <span aria-hidden="true">&raquo;</span>
+        </button>
+      </li>
+    </ul>
+  </nav>

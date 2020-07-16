@@ -1,0 +1,106 @@
+{
+    "menu": {
+      "system": {
+        "user": "사용자",
+        "role": "구실",
+        "position": "직책",
+        "codebook": "코드북"
+      }
+    },
+    "paging": {
+      "itemsPerPage": "페이지 당 항목",
+      "nextPage": "다음",
+      "previousPage": "이전"
+    },
+    "error": {
+      "required": "이 필드는 필수입니다",
+      "email": "잘못된 이메일 형식"
+    },
+    "common": {
+      "createdBy": "에 의해 생성",
+      "createdDate": "작성일",
+      "updatedBy": "업데이트 한 사람",
+      "updatedDate": "업데이트 된 날짜"
+    },
+    "button": {
+      "search": "Search",
+      "create": "Create",
+      "clear": "Clear",
+      "save": "Save",
+      "cancel": "Cancel"
+    },
+    "user": {
+      "searchTitle": "Search User",
+      "detailTitle": "User Info",
+      "userId": "User ID",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "status": "Status",
+      "businessUnit": "Business Unit",
+      "role": "Role",
+      "division": "Division",
+      "position": "Position",
+      "active": "Active",
+      "inactive": "Inactive",
+      "email": "Email",
+      "id": "ID",
+      "loginType": "Login Type",
+      "nickname": "Nickname",
+      "password": "Password",
+      "section": {
+        "responsibility": "Responsibility",
+        "authentication": "Authentication"
+      },
+      "button": {
+        "log": "Log"
+      }
+    },
+    "loginLog": {
+      "title": "Login Log",
+      "userId": "User ID",
+      "attemptDate": "Attempt Date",
+      "type": "Type",
+      "ipAddress": "IP Address",
+      "statusCode": "Status Code",
+      "statusMessage": "Status Message",
+      "attemptDateFrom": "Attempt Start Date",
+      "attemptDateTo": "Attempt End Date"
+    },
+    "role": {
+      "title": "Role",
+      "detailTitle": "Role Detail",
+      "roleCode": "Role Code",
+      "roleName": "Role Name",
+      "active": "Active",
+      "respSetup": "Responsibility"
+    },
+    "position": {
+      "title": "Position",
+      "detailTitle": "Position Detail",
+      "posId": "Position ID",
+      "posName": "Position Name",
+      "parentPosName": "Parent Position"
+    },
+    "content": {
+      "title": "Content",
+      "contentId": "Content ID",
+      "catId": "Folder",
+      "seq": "Sequence",
+      "contentTitle": "Title",
+      "display": "Icon",
+      "contentStatus": "Status",
+      "activeFlag": "Active",
+      "sendDocFlag": "Send Document",
+      "startDate": "Start Date",
+      "startTime": "Start Time",
+      "endDate": "End Date",
+      "endTime": "End Time"
+    },
+    "document": {
+      "title": "Title",
+      "mainFlag": "Main Document",
+      "file": "File",
+      "description": "Description"
+    }
+  }
+  

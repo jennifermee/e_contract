@@ -1,0 +1,88 @@
+<section>
+  <div class="row">
+    <div class="col-12 d-flex flex-row-reverse">
+      <button  class="btn btn-small-long btn-black">
+        조직 import
+      </button>
+    </div>
+  </div>
+  <div class="row" style="margin-left: 15px;">
+    <div class="row my-2 py-3 w-100" style="background: #fff;height: 463px;">
+      <div class="col-md-12">
+        <div class="form-group"><label
+            for="formGroupExampleInput">부서/팀 추가</label><input type="text" placeholder="부서/팀 명 "
+            class="form-control"></div>
+      </div>
+      <div class="col-12" style="height: 285px;overflow-y: auto;">
+        <div class="col-12 d-flex justify-content-between">
+          <div>
+            <label>팀원 추가</label>
+          </div>
+          <button (click)="onAdd()" class="btn btn-middle-short btn-white">
+            추가하기
+          </button>
+        </div>
+        <form>
+          <table class="table">
+            <!--
+              <thead>
+              <tr>
+                <td class="text-center">ลำดับ</td>
+                <td class="text-center">emp name</td>
+                <td class="text-center">team</td>
+                <td class="text-center">department</td>
+                <td class="text-center">tel</td>
+                <td class="text-center">e-mail</td>
+              </tr>
+            </thead>
+          -->
+            <tbody>
+              <tr *ngFor='let obj of objTable;let i = index'>
+                <td class="text-center">{{(i+1)}}</td>
+                <td class="text-center">{{obj.e_name}}</td>
+                <td class="text-center">{{obj.t_name}}</td>
+                <td class="text-center">{{obj.d_name}}</td>
+                <td class="text-center">{{obj.e_tel}}</td>
+                <td class="text-center">{{obj.e_mail}}</td>
+              </tr>
+              <tr>
+                <td class="text-center">-</td>
+                <td class="text-center">
+                  <div class="form-group">
+                    <input type="text" name="name" class="form-control" id="exampleInput" [(ngModel)]="name" #nameVal="ngModel">
+                  </div>
+                </td>
+                <td class="text-center">
+                  <div class="form-group">
+                    <input type="text" name="team" class="form-control" id="exampleInput"  [(ngModel)]="team" #teamVal="ngModel">
+                  </div>
+                </td>
+                <td class="text-center">
+                  <div class="form-group">
+                    <input type="text" name="department" class="form-control" id="exampleInput"  [(ngModel)]="department" #departmentVal="ngModel">
+                  </div>
+                </td>
+                <td class="text-center">
+                  <div class="form-group">
+                    <input type="text" name="tel" class="form-control" id="exampleInput"  [(ngModel)]="tel" #telVal="ngModel">
+                  </div>
+                </td>
+                <td class="text-center">
+                  <div class="form-group">
+                    <input type="email" name="email" class="form-control" id="exampleInputEmail1"
+                      aria-describedby="emailHelp"  [(ngModel)]="email" #emailVal="ngModel">
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </form>
+      </div>
+      <div class="col-12 d-flex justify-content-center">
+        <button class="btn btn-big btn-black">
+          확인
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

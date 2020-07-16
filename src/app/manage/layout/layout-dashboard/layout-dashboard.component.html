@@ -1,0 +1,21 @@
+<app-navber></app-navber>
+
+<div class="d-flex" id="wrapper">
+    <!-- <app-dashboard-sidebar></app-dashboard-sidebar> -->
+    <app-sidebar-damo [action]='sidebar'></app-sidebar-damo>
+    <div id="page-content-wrapper" class="py-3">
+        <!-- <app-dashboard-navbar></app-dashboard-navbar> -->
+        <router-outlet></router-outlet>
+    </div>
+</div>
+
+<!-- <section class="container-fluid">
+    <div class="row">
+        <div class="col-md-2 py-3">
+            <app-sidebar-damo [action]='sidebar'></app-sidebar-damo>
+        </div>
+        <div class="col-md-10 py-3" style="background-color: #e2e6eb;">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</section> -->

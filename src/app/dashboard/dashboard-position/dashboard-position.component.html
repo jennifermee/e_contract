@@ -1,0 +1,90 @@
+<section>
+  <div class="row">
+    <div class="col-md-12 p-3">
+      <p class="m-0">공지사항</p>
+      <p class="m-0">2020.03.27 [긴급] 카카오톡 알림톡 서비스 재개 안내</p>
+      <p class="m-0">2020.03.26 [긴급] 카카오톡 알림톡 서비스 문제 -> 문자 메세지로 전환합니다.</p>
+    </div>
+  </div>
+</section>
+
+
+<section>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="table-responsive-md">
+        <table class="table">
+          <thead>
+            <tr>
+              <th class="text-center font-12" scope="col" style="width: 5%;">담당</th>
+              <th class="text-center font-12" scope="col" style="width: 20%;">크레딧</th>
+              <th class="text-center font-12" scope="col" style="width: 20%;">보냄</th>
+              <th class="text-center font-12" scope="col" style="width: 20%;">진행중</th>
+              <th class="text-center font-12" scope="col" style="width: 12.5%;">완료</th>
+              <th class="text-center font-12" scope="col" style="width: 12.5%;">취소</th>
+              <th class="text-center font-12" scope="col" style="width: 10%;">반려</th>
+            </tr>
+            <tr>
+              <th class="text-center font-12" scope="col" style="width: 5%;">
+
+
+                <input type="checkbox" name="checkall" id='checkall' />
+                <label for="checkall" class="button">
+                  <fa-icon [icon]="faCheck" class="fa-1x" style="color:#333;"></fa-icon>
+                </label>
+                상태
+              </th>
+              <th class="text-center font-12" scope="col" style="width: 20%;">계약서 명</th>
+              <th class="text-center font-12" scope="col" style="width: 20%;">받는 사람 계약자 소속/성명</th>
+              <th class="text-center font-12" scope="col" style="width: 20%;">보낸 사람</th>
+              <th class="text-center font-12" scope="col" style="width: 12.5%;">보낸 날짜</th>
+              <th class="text-center font-12" scope="col" style="width: 12.5%;">마지막 업데이트</th>
+              <th class="text-center font-12" scope="col" style="width: 10%;">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <ng-container *ngFor="let data of datas">
+              <tr>
+                <td class="text-center font-12" style="width: 5%;">{{data.state}}</td>
+                <td class="text-center font-12" style="width: 20%;">{{data.name}}</td>
+                <td class="text-center font-12" style="width: 20%;">
+                  <div class="media text-left">
+                    <img src="{{data.rca.img}}" width="50" class="mr-3" alt="">
+                    <div class="media-body">
+                      <p class="mb-2 font-10"><span
+                          class="badge badge-info">&nbsp;&nbsp;</span>&nbsp;{{data.rca.recipient}}</p>
+                      <p class="m-0 font-16">{{data.rca.name}}</p>
+                    </div>
+                  </div>
+                </td>
+                <td class="text-center" style="width: 20%;">
+                  <div class="media text-left">
+                    <img src="{{data.sender.img}}" width="50" class="mr-3" alt="">
+                    <div class="media-body font-12">
+                      <p class="mb-2 font-10"><span
+                          class="badge badge-info">&nbsp;&nbsp;</span>&nbsp;{{data.sender.position}}</p>
+                      <p class="m-0 font-16">{{data.sender.name}}</p>
+                    </div>
+                  </div>
+                </td>
+                <td class="text-center font-12" style="width: 12.5%;">{{data.sent_date}}</td>
+                <td class="text-center font-12" style="width: 12.5%;">{{data.last_update}}</td>
+                <td class="text-center" style="width: 10%;">
+                  <span class="mx-1">
+                    <fa-icon [icon]="faRedo" class="fa-1x" style="color:#333;"></fa-icon>
+                  </span>
+                  <span class="mx-1">
+                    <fa-icon [icon]="faExclamationCircle" class="fa-1x" style="color:#333;"></fa-icon>
+                  </span>
+                  <span class="mx-1">
+                    <fa-icon [icon]="faTv" class="fa-1x" style="color:#333;"></fa-icon>
+                  </span>
+                </td>
+              </tr>
+            </ng-container>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>

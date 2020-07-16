@@ -1,0 +1,117 @@
+<section class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <h3>수신자 선택 및 전송</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="form-group">
+              <label for="exampleInputEmail1">템플릿 이름</label>
+              <input type="text" class="form-control" name="Agreement" placeholder="표준근로계약서" id="exampleInputAgreement"
+                aria-describedby="emailHelp">
+              <small id="AgreementHelp" class="form-text text-muted"></small>
+            </div>
+          </div>
+        </div>
+        <div class="row my-1">
+          <div class="col-6">
+            <label>수신자</label>
+          </div>
+          <div class="col-6 d-flex justify-content-end">
+            <button class="btn btn-middle-short btn-black" type="button" (click)="openModal()" name=""
+              id="">대량전송</button>
+          </div>
+        </div>
+        <div class="row my-1">
+          <div class="col-12" style="height: auto;max-height: 295px;overflow-y: auto;">
+            <form [formGroup]=formData id="formData">
+
+              <table style="width: 100%;">
+                <tbody>
+                  <ng-container *ngFor="let contactList of contactLists;let i = index">
+                    <tr class="my-1">
+                      <td style="width: 5%;border: solid 1px red;color: red;" class="text-center">{{(i+1)}}</td>
+                      <td style="width: 30%;">
+                        <input type="text" class="form-control" name="name[{{i}}]" value="{{contactList.name}}"
+                          placeholder="이름" aria-describedby="">
+                      </td>
+                      <td style="width: 30%;">
+                        <input type="text" class="form-control" name="e_mail[{{i}}]" value="{{contactList.e_mail}}"
+                          placeholder="이메일" aria-describedby="">
+                      </td>
+                      <td style="width: 30%;">
+                        <input type="text" class="form-control" name="phone[{{i}}]" value="{{contactList.phone}}"
+                          placeholder="휴대폰번호 (숫자만 입력)" aria-describedby="">
+                      </td>
+                      <td style="width: 5%;">
+                        <button class="btn btn-circle-small btn-black" type="button" (click)="removeContact(i)">
+                          <fa-icon [icon]="faTimes" class="fa-1x"></fa-icon>
+                        </button>
+                      </td>
+                    </tr>
+                  </ng-container>
+                </tbody>
+              </table>
+            </form>
+
+          </div>
+        </div>
+        <div class="row my-1">
+          <div class="col-12 text-center">
+            <button type="button" (click)="pushContact()" class="btn btn-middle-long btn-white">
+              <fa-icon [icon]="faPlus" class="fa-1x icon-btn"></fa-icon> 추가
+            </button>
+          </div>
+        </div>
+        <div class="row my-1">
+          <div class="col-12">
+            <label>설정</label>
+          </div>
+        </div>
+        <div class="row my-1">
+          <div class="col-md-6 my-1">
+            <div class="row">
+              <div class="col-4">
+                <button class="btn btn-middle-short btn-gray">비밀번호 인증</button>
+              </div>
+              <div class="col-8">
+                <input type="text" class="form-control" name="" placeholder="비밀번호 입력 (4~12 문자 및 숫자)" id=""
+                  aria-describedby="">
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 my-1">
+            <div class="row">
+              <div class="col-4">
+                <button class="btn btn-middle-short btn-gray">비밀번호 인증</button>
+              </div>
+              <div class="col-8">
+                <input type="text" class="form-control" name="" placeholder="비밀번호 입력 (4~12 문자 및 숫자)" id=""
+                  aria-describedby="">
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 my-1">
+            <div class="row">
+              <div class="col-4">
+                <button class="btn btn-middle-short btn-black">휴대폰 본인인증</button>
+              </div>
+              <div class="col-8">
+                <label>휴대전화가 입력된 수신자에게만 적용됩니다.</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row my-1">
+          <div class="col-6 d-flex justify-content-end">
+            <button class="btn btn-big btn-gray" type="button" name="" id="">이전</button>
+          </div>
+          <div class="col-6">
+            <button class="btn btn-big btn-crimson" type="button" (click)="checkDataForm()" name="" id="">전송</button>
+          </div>
+        </div>
+
+      </section>
+      <app-select-recipients></app-select-recipients>
+<app-modal></app-modal>

@@ -1,0 +1,155 @@
+<section class="w-100" style="background-color: #e2e6eb;min-height: 90vh;">
+  <section class="container-fluid">
+    <h3 class="my-3 py-2">템플릿 관리</h3>
+    <div class="row">
+      <div class="col-md-6 d-flex flex-row">
+        <button class="btn btn-small-long btn-white" (click)='deleteAllSelect()'> 삭제 </button>
+        <button class="btn btn-small-long btn-white" (click)="availableAllSelect()"> 사용 </button>
+        <button class="btn btn-small-long btn-white" (click)="notAvailableAllSelect()"> 비사용 </button>
+        <button class="btn btn-small-long btn-white"> 만들기 </button>
+      </div>
+      <div class="col-md-6 d-flex flex-row-reverse">
+        <form [formGroup]=formSearch>
+          <div class="input-group">
+            <input type="text" formControlName='searchText'
+              class="form-control form-control-sm shadow-none inp-sea-typ-001" placeholder="계약서 명, 보낸 사람, 받는 사람 "
+              style="box-shadow: none !important;" aria-describedby="button-addon2">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary btn-search btn-sm" style="color: #000;" type="button"
+                id="button-addon2">
+                <fa-icon [icon]="faSearch" class="fa-1x"></fa-icon>
+              </button>
+            </div>
+          </div>
+        </form>
+        <div class="form-group">
+          <select class="form-control form-control-sm inp-sel-typ-001">
+            <option value="constructor">생성자</option>
+            <option value="templatename">템플릿 명</option>
+            <option value="use">사용</option>
+            <option value="status">상태</option>
+            <option value="lastupdatedate">마지막 업데이트 날짜</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <table class="w-100 table table-hover" style="background: #fff;">
+          <thead class="th-bg-001">
+            <tr>
+              <th class="text-center tex-tit-tab-001">
+                선택
+              </th>
+              <th class="text-center tex-tit-tab-001">
+                사용
+              </th>
+              <th class="text-center tex-tit-tab-001">
+                상태
+              </th>
+              <th class="text-center tex-tit-tab-001">
+                계약서 명
+              </th>
+              <th class="text-center tex-tit-tab-001">
+                생성자
+              </th>
+              <th class="text-center tex-tit-tab-001">
+                생성 날짜
+              </th>
+              <th class="text-center tex-tit-tab-001">
+                마지막 업데이트
+              </th>
+              <th class="text-center tex-tit-tab-001">
+                액션
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- <ng-container *ngFor="let t of tp">
+                  <tr>
+                    <td class="text-center">
+                      <div class="form-group form-check">
+                        <input type="checkbox" (click)="checkBoxSelect(t.id)" class="form-check-input">
+                      </div>
+                    </td>
+                    <td class="text-center">
+                      {{t.use}}
+                    </td>
+                    <td class="text-center">
+                      {{t.state}}
+                    </td>
+                    <td class="text-center">
+                      {{t.name}}
+                    </td>
+                    <td class="text-center">
+                      {{t.constructor}}
+                    </td>
+                    <td class="text-center">
+                      {{t.creationDate}}
+                    </td>
+                    <td class="text-center">
+                      {{t.lastUpdate}}
+                    </td>
+                    <td class="text-center">
+                      <fa-icon [icon]="faReply" class="fa-1x mx-1 icon-btn" (click)="onClickReply()"></fa-icon>
+                      <fa-icon [icon]="faPencilAlt" class="fa-1x mx-1 icon-btn"></fa-icon>
+                      <fa-icon [icon]="faBriefcase" class="fa-1x mx-1 icon-btn" (click)="onClickSendLink()"></fa-icon>
+                      <fa-icon [icon]="faDownload" class="fa-1x mx-1 icon-btn"></fa-icon>
+                    </td>
+                  </tr>
+                </ng-container> -->
+
+            <ng-container *ngFor="let t of tp">
+              <tr>
+                <td class="text-center">
+                  <div class="form-group form-check">
+                    <input type="checkbox" (click)="checkBoxSelect(t.templId)" class="form-check-input">
+                  </div>
+                </td>
+                <td class="text-center tex-itm-tab-001">
+                  {{t.templYn}}
+                </td>
+                <td class="text-center tex-itm-tab-001">
+                  {{t.templType}}
+                </td>
+                <td class="text-left tex-itm-tab-001">
+                  {{t.templNm}}
+                </td>
+                <td class="text-center tex-itm-tab-001">
+                  마동석
+                </td>
+                <td class="text-center tex-itm-tab-001">
+                  {{t.frstRegisterPnttm}}
+                </td>
+                <td class="text-center tex-itm-tab-001">
+                  {{t.lastUpdusrPnttm}}
+                </td>
+                <td class="text-center">
+                  <span class="img-ico-lis-man-001 ico-man-lis-rep-001" (click)="onClickReply()"></span>
+                  <span class="img-ico-lis-man-001 ico-man-lis-edt-001" (click)="showEditor(t.templId)"></span>
+                  <span class="img-ico-lis-man-001 ico-man-lis-lin-001" (click)="onClickSendLink()"></span>
+                  <span class="img-ico-lis-man-001 ico-man-lis-loa-001"></span>
+                  <!-- <fa-icon [icon]="faReply" class="fa-1x mx-1 icon-btn" (click)="onClickReply()"></fa-icon>
+                      <fa-icon [icon]="faPencilAlt" class="fa-1x mx-1 icon-btn"></fa-icon>
+                      <fa-icon [icon]="faBriefcase" class="fa-1x mx-1 icon-btn" (click)="onClickSendLink()"></fa-icon>
+                      <fa-icon [icon]="faDownload" class="fa-1x mx-1 icon-btn"></fa-icon> -->
+                </td>
+              </tr>
+            </ng-container>
+          </tbody>
+        </table>
+        <div class="d-flex justify-content-center" style="margin-top: 30px">
+          <app-pagination [currentPage]='1' [maxPage]="1"></app-pagination>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <app-loading></app-loading>
+      </div>
+    </div>
+  </section>
+</section>
+<app-modal></app-modal>
+<app-alert-confirm></app-alert-confirm>
+<app-send-link></app-send-link>

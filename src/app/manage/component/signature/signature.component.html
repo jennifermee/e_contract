@@ -1,0 +1,55 @@
+<section class="container-fluid">
+  <div class="row">
+    <div class="col-12 d-flex justify-content-center my-3">
+      <button class="btn btn-big {{btnState.signaturedrawing.class}}"
+              (click)="btnSetState('signaturedrawing','uploadimage')">서명 그리기 </button>
+            <button class="btn btn-big {{btnState.uploadimage.class}}"
+              (click)="btnSetState('uploadimage','signaturedrawing')">이미지 업로드 </button>
+    </div>
+  </div>
+  <div class="row" *ngIf="btnState.signaturedrawing.display">
+    <div class="col-12 d-flex flex-row border-body-modal">
+      <div class="canvas">
+        <signature-pad class="signature-pad" [options]="options" (onBeginEvent)="drawBegin($event)"
+          (onEndEvent)="drawComplete($event)">
+        </signature-pad>
+      </div>
+      <div class="d-flex justify-content-center">
+        <ul class="px-2 m-3" style=" list-style-type:none">
+          <li>
+            <div class="my-1" style="width: 32px;height: 32px;background: rgb(0,0,0);" (click)="penColor('rgb(0,0,0)')">
+
+            </div>
+          </li>
+          <li>
+            <div class="my-1" style="width: 32px;height: 32px;background: rgb(248,38,68);" (click)="penColor('rgb(248,38,68)')">
+
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-12 text-right">
+      <button class="btn btn-small-long btn-white my-2" (click)="clear()">
+        지우기
+      </button>
+    </div>
+  </div>
+  <div class="row d-flex justify-content-center" *ngIf="btnState.uploadimage.display">
+    <div class="row">
+      <div class="col-12 d-flex justify-content-center">
+        <input style="display: none;" (change)="addfile($event)" type="file" #file >
+        <label>업로드 파일 : </label><label>{{filName}} </label><button  (click)="file.click()" class="btn btn-small-long btn-white m-2">취소</button>
+      </div>
+      <div class="col-12 d-flex justify-content-center">
+        <label>이미지 영역을 드래그하여 크기를 정하고 명도 대비를 조정해주세요.</label>
+      </div>
+    </div>
+    <angular-cropper class="w-100" #angularCropper [cropperOptions]="config" [imageUrl]="'../../../assets/img/admin/logo_gcont2x.png'"></angular-cropper>
+    <div class="d-flex justify-content-center my-2">
+      <form>
+       <label>명도 대비 : </label> <input type="range" name="zoom" max="0.9" min="0.1" step="0.1" value="0.5" (change)="cropperZoom($event)">
+      </form>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,171 @@
+<section>
+  <div class="row">
+    <div class="col-12 mt-3">
+      <label class=""><b>결제 내역 및 환불/취소</b></label>
+    </div>
+    <div class="col-12">
+      <form class="w-100">
+        <div class="row">
+          <div class="col-md-2 d-flex">
+            <div for="ProcessingStatus" class="col-auto col-form-label p-2">
+              처리상태
+            </div>
+            <select class="col-auto form-control" style="width: 90px;" id="ProcessingStatus">
+              <option>전체</option>
+            </select>
+          </div>
+
+          <div class="col-md-3 d-flex">
+            <label for="dateStart" class="col-auto col-form-label p-2">
+              결제 일시
+            </label>
+            <input type="date" name="dateStart" id="dateStart"  style="width: 155px;" class="col-auto form-control">
+            <input type="time" name="timeStart" id="timeStart"  style="width: 100px;" class="col-auto form-control">
+          </div>
+
+          <div class="col-md-3 d-flex">
+            <label for="dateStart" class="col-auto col-form-label p-2">
+              ~
+            </label>
+            <input type="date" name="dateEnd" id="dateEnd" style="width: 155px;" class="col-auto form-control">
+            <input type="time" name="timeEnd" id="timeEnd" style="width: 100px;" class="col-auto form-control">
+          </div>
+
+          <div class="col-md-4 d-flex">
+            <label for="cardNumber" class="col-auto col-form-label p-2">
+              카드번호
+            </label>
+            <input type="text" name="cardNumber" id="cardNumber"  style="width: 150px;" class="form-control">
+            <button class="btn btn-middle-short btn-black my-0">검색</button>
+          </div>
+
+
+<!--
+          <div class="form-group row">
+            <label for="ProcessingStatus" class="col-sm-auto col-form-label p-2">
+              처리상태
+            </label>
+            <div class="col-sm-auto">
+              <select class="form-control" id="ProcessingStatus">
+                <option>전체</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="dateStart" class="col-sm-auto col-form-label p-2">
+              결제 일시
+            </label>
+            <div class="col-sm-auto">
+              <input type="date" name="dateStart" id="dateStart" class="form-control">
+            </div>
+            <div class="col-sm-auto">
+              <input type="time" name="timeStart" id="timeStart" class="form-control">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="dateStart" class="col-sm-auto col-form-label p-2">
+              ~
+            </label>
+            <div class="col-sm-auto">
+              <input type="date" name="dateEnd" id="dateEnd" class="form-control">
+            </div>
+            <div class="col-sm-auto">
+              <input type="time" name="timeEnd" id="timeEnd" class="form-control">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="cardNumber" class="col-sm-auto col-form-label p-1">
+              카드번호
+            </label>
+            <div class="col-sm-auto">
+              <input type="text" name="cardNumber" id="cardNumber" class="form-control">
+            </div>
+            <div class="col-sm-auto">
+              <button class="btn btn-middle-short btn-black">검색</button>
+            </div>
+          </div> -->
+
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="row my-2">
+    <div class="col-12">
+      <table class="w-100 table table-hover" style="background: #fff;">
+        <thead class="">
+          <tr>
+            <th class="text-center">
+              결제 일시
+            </th>
+            <th class="text-center">
+              결제 서비스 내역
+            </th>
+            <th class="text-center">
+              결제  방법
+            </th>
+            <th class="text-center">
+              카드 번호
+            </th>
+            <th class="text-center">
+              결제 금액
+            </th>
+            <th class="text-center">
+              승인 번호
+            </th>
+            <th class="text-center">
+              승인일
+            </th>
+            <th class="text-center">
+              구매  포인트
+            </th>
+            <th class="text-center">
+              처리상태
+            </th>
+            <th class="text-center">
+              환불/ 취소
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <ng-container *ngFor="let t of td">
+            <tr>
+              <td class="text-center">
+                {{t.paymentDate}}
+              </td>
+              <td class="text-center">
+                {{t.paymentServiceHistory}}
+              </td>
+              <td class="text-center">
+                {{t.paymentMethod}}
+              </td>
+              <td class="text-center">
+                {{t.cardNumber}}
+              </td>
+              <td class="text-center">
+                {{t.amountOfPayment}}
+              </td>
+              <td class="text-center">
+                {{t.approvalNumber}}
+              </td>
+              <td class="text-center">
+                {{t.approvalDate}}
+              </td>
+              <td class="text-center">
+                {{t.purchasePoint}}
+              </td>
+              <td class="text-center">
+                {{t.processingStatus}}
+              </td>
+              <td class="text-center">
+                <button class="btn btn-small-long btn-white" *ngIf="t.refundOrCancellation">요청</button>
+              </td>
+            </tr>
+          </ng-container>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

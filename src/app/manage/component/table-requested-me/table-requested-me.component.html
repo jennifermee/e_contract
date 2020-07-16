@@ -1,0 +1,72 @@
+<div class="row">
+  <div class="col-md-6 d-flex flex-row">
+    <button class="btn btn-small-long btn-white" (click)="onClickContractCancellation()">계약 취소</button>
+  </div>
+</div>
+<div class="row">
+  <div class="col-12">
+    <table class="w-100 table table-hover" style="background: #fff;">
+      <thead class="">
+        <tr>
+          <th class="text-center">
+            선택
+          </th>
+          <th class="text-center">
+            액션
+          </th>
+          <th class="text-center">
+            계약서 명
+          </th>
+          <th class="text-center">
+            보낸사람
+          </th>
+          <th class="text-center">
+            생성 날짜
+          </th>
+          <th class="text-center">
+            마지막 업데이트
+          </th>
+          <th class="text-center">
+            액션
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let t of tpTwo">
+          <tr>
+            <td class="text-center">
+              <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input">
+              </div>
+            </td>
+            <td class="text-center">
+              {{t.action}}
+            </td>
+            <td class="text-center">
+              {{t.name}}
+            </td>
+            <td class="text-center">
+              {{t.sender}}
+            </td>
+            <td class="text-center">
+              {{t.creationDate}}
+            </td>
+            <td class="text-center">
+              {{t.lastUpdate}}
+            </td>
+            <td class="text-center">
+              <span class="img-ico-lis-man-001 ico-man-lis-exc-001"></span>
+              <span class="img-ico-lis-man-001 ico-man-lis-mon-001"></span>
+              <span class="img-ico-lis-man-001 ico-man-lis-loa-001"></span>
+              <!-- <fa-icon [icon]="faRedo" class="fa-1x mx-1 icon-btn"></fa-icon> -->
+              <!-- <fa-icon [icon]="faExclamationCircle" class="fa-1x mx-1 icon-btn"></fa-icon>
+              <fa-icon [icon]="faTv" class="fa-1x mx-1 icon-btn"></fa-icon>
+              <fa-icon [icon]="faDownload" class="fa-1x mx-1 icon-btn"></fa-icon> -->
+            </td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+</div>
+<app-contract-cancellation></app-contract-cancellation>

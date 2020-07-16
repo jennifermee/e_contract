@@ -1,0 +1,45 @@
+<section class="container-fluid" style="background-color: #e2e6eb;min-height: 90vh;">
+      <section class="container-fluid">
+        <h3 class="my-3 py-2">통합 계약 관리</h3>
+        <div class="row">
+          <div class="col-md-6 d-flex flex-row">
+            <button class="btn btn-big {{btnState.requested.class}}"
+              (click)="btnSetState('requested','requested_to_me')">요청한 전자계약</button>
+            <button class="btn btn-big {{btnState.requested_to_me.class}}"
+              (click)="btnSetState('requested_to_me','requested')">나에게 요청된 전자계약</button>
+          </div>
+          <div class="col-md-6 d-flex flex-row-reverse">
+            <div class="w-50">
+              <form [formGroup]=formSearch>
+                <div class="input-group">
+                  <input type="text" formControlName='searchText' class="form-control form-control-sm shadow-none"
+                    placeholder="계약서 명, 보낸 사람, 받는 사람 " style="box-shadow: none !important;"
+                    aria-describedby="button-addon2">
+                  <div class="input-group-append">
+                    <button class="btn btn-outline-secondary btn-search btn-sm" style="color: #000;" type="button"
+                      id="button-addon2">
+                      <fa-icon [icon]="faSearch" class="fa-1x"></fa-icon>
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="form-group w-25">
+              <select class="form-control form-control-sm">
+                <option value="0">검색 검색 옵션</option>
+                <option value="contract_name">계약서 명</option>
+                <option value="sent_date">보낸 날짜</option>
+                <option value="last_update_date">마지막 업데이트 날짜</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="container-fluid" *ngIf="btnState.requested.display">
+        <app-table-requested></app-table-requested>
+      </section>
+      <section class="container-fluid" *ngIf="btnState.requested_to_me.display">
+        <app-table-requested-me></app-table-requested-me>
+      </section>
+</section>
+<app-modal></app-modal>

@@ -1,0 +1,18 @@
+.b {
+  border: solid 1px black;
+}
+.sh{
+  box-shadow: 0 0.5rem 1rem transparent !important;
+}
+.sh:hover {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.cre-ele-bod-001{
+  min-width: 298px !important;
+  min-height: 410px !important;
+  width: 33.333333%;
+  padding-left:15px !important;
+  padding-right:15px !important;
+  margin-top: 10px;
+}

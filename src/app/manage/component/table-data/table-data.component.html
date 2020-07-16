@@ -1,0 +1,51 @@
+<section class="container-fluid">
+  <div class="row">
+    <div class='col-12'>
+      <h4 class="text-center">수신자 확인</h4>
+      <p class="text-center my-0">업로드한 수신자 목록을 확인 후, 진행 하시려면</p>
+      <p class="text-center my-0">아래 “확인” 버튼을 클릭해주세요.</p>
+    </div>
+    <div class="col-12 d-flex justify-content-between my-2">
+      <div class="col-6">
+        총 {{total}} 명
+      </div>
+      <div class="col-6">
+        <form [formGroup]=formSearch>
+          <div class="input-group mb-3">
+            <input type="text" formControlName='searchText' class="form-control" [placeholder]="titbleTable[searchPlaceholder]"
+              aria-describedby="button-addon2">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary border-0" type="button" id="button-addon2">
+                <fa-icon [icon]="faSearch" class="fa-1x icon-btn"></fa-icon>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="col-12">
+      <table class="table" id="searchTextResults">
+        <thead>
+          <tr>
+            <ng-container *ngFor='let titble of keyTitle ; index as i;'>
+              <th scope="col" class="text-center">{{titbleTable[titble]}}</th>
+            </ng-container>
+            <th>삭제</th>
+          </tr>
+        </thead>
+        <tbody>
+          <ng-container *ngFor='let data of dataDisplay;index as i;'>
+            <tr>
+              <ng-container *ngFor='let key of keyTitle;'>
+                <td class="text-center">{{data[key]}}</td>
+              </ng-container>
+              <td><button (click)="removeDataByIndex(data[keyTitle[0]])" class="btn btn-circle-small btn-lightred">
+                  <fa-icon [icon]="faTimes" class="fa-1x"></fa-icon>
+                </button></td>
+            </tr>
+          </ng-container>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

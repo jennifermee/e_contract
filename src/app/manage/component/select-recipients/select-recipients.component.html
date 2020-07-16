@@ -1,0 +1,337 @@
+<section class="container-fluid">
+  <div class="harder">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">1/1 페이지</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <button _ngcontent-toi-c104="" class="btn btn-small-long btn-white"> 취소 </button>
+        </form>
+      </div>
+    </nav>
+  </div>
+  <div class="body mt-4">
+    <h3>템플릿 만들기 c</h3>
+    <div class="row my-3">
+      <div class="col-12 col-md-6">
+        <div class="form-group">
+          <label for="exampleInputEmail1">필수입력</label>
+          <input type="text" class="form-control" name="Agreement" placeholder="부동산임대차계약서" id="exampleInputAgreement"
+            aria-describedby="emailHelp">
+          <small id="AgreementHelp" class="form-text text-muted"></small>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="row">
+          <div class="col-md-5">
+            <div class="row">
+              <div class="col-12">
+                <label>수신자</label>
+                <div class="w-100">
+                  <button class="btn btn-small-long btn-white">
+                    선택된 팀원 보기
+                  </button>
+                  <button class="btn btn-small-long btn-white">
+                    조직원 전체 선택
+                  </button>
+                </div>
+              </div>
+              <div class="col-12 d-flex flex-row">
+                <div class="w-75 row" style="background: #ffffff;margin-left: 0px;margin-right: 0px;">
+                  <div class="col-4 py-3">
+                    <select class="form-control">
+                      <option>이름</option>
+                    </select> 
+                  </div>
+                  <div class="col-8 py-3">
+                    <form [formGroup]=formSearch>
+                      <div class="input-group mb-3">
+                        <input type="text" formControlName='searchText' class="form-control" [placeholder]=""
+                          aria-describedby="button-addon2">
+                        <div class="input-group-append">
+                          <button class="btn btn-outline-secondary border-0" style="color: #000000;" type="button"
+                            id="button-addon2">
+                            <fa-icon [icon]="faSearch" class="fa-1x"></fa-icon>
+                          </button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="col-12" style="height: 400px;overflow: auto;width: 450px;">
+                    <div class="clt">
+                      <ul class="active">
+                        <ng-container *ngFor="let department of empDataList.department;let i = index">
+                          <li id="department-{{i}}">
+                            <span class="caret">{{department.d_name}}</span>
+                            <ul class="nested">
+                              <ng-container *ngFor='let tames_list of empDataList.tames;let j = index'>
+                                <li *ngIf='tames_list.d_id == department.d_id'>
+                                  <span class="caret">{{tames_list.t_name}}</span>
+                                  <ul class="nested">
+                                    <ng-container *ngFor='let emp_list of empDataList.emp;let k = index'>
+                                      <li *ngIf='tames_list.t_id == emp_list.t_id'>
+                                        {{emp_list.e_name}}
+                                      </li>
+                                    </ng-container>
+                                  </ul>
+                                </li>
+                              </ng-container>
+                            </ul>
+                          </li>
+                        </ng-container>
+                        <!-- <li>
+                          <span class="caret">Fruit</span>
+                          <ul class="nested">
+                            <li>
+                              <span class="caret">Red</span>
+                              <ul class="nested">
+                                <li>Cherry</li>
+                                <li>
+                                  <span class="caret">Yellow</span>
+                                  <ul class="nested">
+                                    <li>Banana</li>
+                                  </ul>
+                                </li>
+                              </ul>
+                            </li>
+                            <li>
+                              <span class="caret">Yellow</span>
+                              <ul class="nested">
+                                <li>Banana</li>
+                                <li>
+                                  <span class="caret">Fruit</span>
+                                  <ul class="nested">
+                                    <li>
+                                      <span class="caret">Red</span>
+                                      <ul class="nested">
+                                        <li>Cherry</li>
+                                        <li>
+                                          <span class="caret">Yellow</span>
+                                          <ul class="nested">
+                                            <li>Banana</li>
+                                          </ul>
+                                        </li>
+                                      </ul>
+                                    </li>
+                                    <li>
+                                      <span class="caret">Yellow</span>
+                                      <ul class="nested">
+                                        <li>Banana</li>
+                                      </ul>
+                                    </li>
+                                  </ul>
+                                </li>
+                                <li>
+                                  <span class="caret">Meat</span>
+                                  <ul class="nested">
+                                    <li>Beef</li>
+                                    <li>Pork</li>
+                                  </ul>
+                                </li>
+                              </ul>
+                            </li>
+                          </ul>
+                        </li>
+                        <li>
+                          <span class="caret">Meat</span>
+                          <ul class="nested">
+                            <li>Beef</li>
+                            <li>
+                              <span class="caret">Fruit</span>
+                              <ul class="nested">
+                                <li>
+                                  <span class="caret">Red</span>
+                                  <ul class="nested">
+                                    <li>Cherry</li>
+                                    <li>
+                                      <span class="caret">Yellow</span>
+                                      <ul class="nested">
+                                        <li>Banana</li>
+                                      </ul>
+                                    </li>
+                                  </ul>
+                                </li>
+                                <li>
+                                  <span class="caret">Yellow</span>
+                                  <ul class="nested">
+                                    <li>Banana</li>
+                                    <li>
+                                      <span class="caret">Fruit</span>
+                                      <ul class="nested">
+                                        <li>
+                                          <span class="caret">Red</span>
+                                          <ul class="nested">
+                                            <li>Cherry</li>
+                                            <li>
+                                              <span class="caret">Yellow</span>
+                                              <ul class="nested">
+                                                <li>Banana</li>
+                                              </ul>
+                                            </li>
+                                          </ul>
+                                        </li>
+                                        <li>
+                                          <span class="caret">Yellow</span>
+                                          <ul class="nested">
+                                            <li>Banana</li>
+                                          </ul>
+                                        </li>
+                                      </ul>
+                                    </li>
+                                    <li>
+                                      <span class="caret">Meat</span>
+                                      <ul class="nested">
+                                        <li>Beef</li>
+                                        <li>Pork</li>
+                                      </ul>
+                                    </li>
+                                  </ul>
+                                </li>
+                              </ul>
+                            </li>
+                          </ul>
+                        </li> -->
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="w-25 d-flex flex-column justify-content-center align-items-center">
+                  <div style="width: 30px;">
+                    <button class="btn btn-circle-small btn-lightred">
+                      <fa-icon [icon]="faChevronLeft" class="fa-1x"></fa-icon>
+                    </button>
+                    <button class="btn btn-circle-small btn-lightred">
+                      <fa-icon [icon]="faChevronRight" class="fa-1x"></fa-icon>
+                    </button>
+                    <button class="btn btn-circle-small btn-lightred">
+                      <fa-icon [icon]="faUndo" class="fa-1x"></fa-icon>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-7">
+            <div class="row">
+              <div class="col-12 d-flex justify-content-end">
+                <button class="btn btn-small-long btn-black">
+                  엑셀 대량 전송
+                </button>
+              </div>
+              <div class="col-12">
+                <button class="btn btn-small-long btn-white">
+                  직접 입력
+                </button>
+              </div>
+              <div class="col-md-12">
+                <div class="w-100" style="background: #ffffff;">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <label class="p-2">
+                        계약 대상자 15 (개인 서명 2, 그룹 서명 1)
+                      </label>
+                    </div>
+                    <div class="col-md-12" style="height: 440px;overflow: auto;">
+                      <table style="width: 100%;">
+                        <thead>
+
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>
+                              <input type="checkbox"/>
+                            </td>
+                            <td>
+                              <label>홍길동 과장 (개발 1팀) </label>
+                            </td>
+                            <td>
+                              <label>ac@naver.com</label>
+                            </td>
+                            <td>
+                              <label>010-1234-4567</label>
+                            </td>
+                            <td>
+                              <input class="form-control" type="text">
+                            </td>
+                            <td>
+                              <button class="btn btn-circle-small btn-black">+</button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <input type="checkbox"/>
+                            </td>
+                            <td>
+                              <label>홍길동 과장 (개발 1팀) </label>
+                            </td>
+                            <td>
+                              <label>ac@naver.com</label>
+                            </td>
+                            <td>
+                              <label>010-1234-4567</label>
+                            </td>
+                            <td>
+                              <input class="form-control" type="text">
+                            </td>
+                            <td>
+                              <button class="btn btn-circle-small btn-black">+</button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><input type="checkbox"/></td>
+                            <td><input class="form-control" type="text"></td>
+                            <td><input class="form-control" type="text"></td>
+                            <td><input class="form-control" type="text"></td>
+                            <td><input class="form-control" type="text"></td>
+                            <td>
+                              <button class="btn btn-circle-small btn-black">+</button>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <div class="row my-1">
+        <div class="col-12">
+          <label>설정</label>
+        </div>
+      </div>
+      <div class="row flex-column my-1">
+        <div class="col-md-6 my-1">
+          <div class="row">
+            <div class="col-4">
+              <button class="btn btn-middle-short btn-gray">비밀번호 인증</button>
+            </div>
+            <div class="col-8">
+              <input type="text" class="form-control" name="" placeholder="비밀번호 입력 (4~12 문자 및 숫자)" id=""
+                aria-describedby="">
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 my-1">
+          <div class="row">
+            <div class="col-4">
+              <button class="btn btn-middle-short btn-black">휴대폰 본인인증</button>
+            </div>
+            <div class="col-8">
+              <label>휴대전화가 입력된 수신자에게만 적용됩니다.</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

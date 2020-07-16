@@ -1,0 +1,92 @@
+@import "~@angular/material/theming";
+
+$custom-typography: mat-typography-config(
+  $font-family: "Prompt, monospace"
+);
+@include mat-core($custom-typography);
+
+$alternate-primary: mat-palette($mat-blue, 800);
+$alternate-accent: mat-palette($mat-blue, 800);
+$alternate-theme: mat-light-theme($alternate-primary, $alternate-accent);
+
+@include angular-material-theme($alternate-theme);
+
+.material-datatables {
+  width: 100%;
+
+  table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+
+    .mat-table {
+      width: 100%;
+      max-width: 100%;
+      margin-bottom: 1rem;
+      display: table;
+      border-collapse: collapse;
+      margin: 0px;
+    }
+
+    .mat-row,
+    .mat-header-row {
+      display: table-row;
+    }
+
+    .mat-cell,
+    .mat-header-cell {
+      word-wrap: initial;
+      display: table-cell;
+      padding: 0px 15px;
+      line-break: unset;
+      width: 40%;
+      white-space: nowrap;
+      overflow: hidden;
+      vertical-align: middle;
+    }
+
+    .mat-header-cell {
+      font-size: 16px;
+    }
+
+  }
+}
+
+.mat-paginator-sticky {
+  bottom: 0px;
+  position: sticky;
+  z-index: 10;
+}
+
+.mat-form-field {
+  line-height: 1.15;
+}
+
+input:read-only {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+input.mat-input-element {
+  margin-bottom: 2.4px;
+}
+
+.mat-select-placeholder {
+  line-height: 1;
+}
+
+.selected-row {
+  background-color: #8bb8df;
+}
+
+.subgroup-header {
+  background-color: #337ab7 !important;
+
+  .card-title {
+    color: white;
+  }
+}
+
+.btn {
+  font-size: 0.8rem !important;
+  padding: 8px 20px !important;
+}

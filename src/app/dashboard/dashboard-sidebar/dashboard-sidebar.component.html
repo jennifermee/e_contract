@@ -1,0 +1,52 @@
+<div id="sidebar-wrapper" class="border-right t" *ngIf='sidebar'>
+  <div class="sidebar-heading d-flex justify-content-between">
+    <img src="/assets/img/frontpage/logo.png" alt="">
+    <div style="cursor: pointer;"  (click)="toggleSideBar()">
+      <span aria-hidden="true"><b>&times;</b></span>
+    </div>
+  </div>
+
+  <div style="margin:1rem;">
+    <div class="list-group list-group-flush">
+      <div class="row" style="text-align: center;">
+        <div class="col-6">
+          <fa-icon [icon]="faUserCircle" class="fa-3x" style="color:#C5C5C5;"></fa-icon>
+        </div>
+        <div class="col-6" style="text-align: left;">Test</div>
+      </div>
+    </div>
+
+    <div class="list-group list-group-flush center">
+      <span class="list-group-item list-group-item-action">
+        <fa-icon [icon]="faFacebookSquare" class="fa-lg" style="color:#C5C5C5;"></fa-icon>
+        &nbsp;
+        <fa-icon [icon]="faLinkedin" class="fa-lg" style="color:#C5C5C5;"></fa-icon>
+        &nbsp;
+        <fa-icon [icon]="faSkype" class="fa-lg" style="color:#C5C5C5;"></fa-icon>
+        &nbsp;
+        <fa-icon [icon]="faYoutubeSquare" class="fa-lg" style="color:#C5C5C5;"></fa-icon>
+        &nbsp;
+      </span>
+      <span class="list-group-item list-group-item-action">
+        <fa-icon [icon]="faBell" class="fa-lg" style="color:yellow;"></fa-icon>
+      </span>
+      <a href="dashboard/home" class="list-group-item list-group-item-action active">
+        <fa-icon [icon]="faHome" class="fa-1x" style="color:#C5C5C5;"></fa-icon><span *ngIf="sidebar">&nbsp;Dashboard</span>
+      </a>
+      <a style="cursor: pointer;" (click)="changePage('role')" class="list-group-item list-group-item-action">
+        <fa-icon [icon]="faFilePdf" class="fa-1x" style="color:#C5C5C5;"></fa-icon>&nbsp;Template Management
+      </a>
+      <a style="cursor: pointer;" (click)="changePage('position')" class="list-group-item list-group-item-action">
+        <fa-icon [icon]="faFileAlt" class="fa-1x" style="color:#C5C5C5;"></fa-icon>&nbsp;Contract Management
+      </a>
+      <a style="cursor: pointer;" (click)="changePage('user')" class="list-group-item list-group-item-action">
+        <fa-icon [icon]="faCog" class="fa-1x" style="color:#C5C5C5;"></fa-icon>&nbsp;Setting
+      </a>
+      <!-- <a (click)="changePage('codebook')" class="list-group-item list-group-item-action">Codebook</a> -->
+    </div>
+  </div>
+</div>
+
+<div (click)="toggleSideBar()" *ngIf="!sidebar" class="p-3" style="position: fixed;top: 0;left: 15;background-color: rgba(0,0,0,0.4);color: white;cursor: pointer;z-index: 9999;">
+  >
+</div>

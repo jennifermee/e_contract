@@ -1,0 +1,285 @@
+<section class="container-fluid my-3">
+  <div class="row">
+    <div class="col-12">
+      <h1>
+        버튼 스타일 가이드
+      </h1>
+    </div>
+    <div class="col-4 my-3">
+      <h5>큰버튼</h5>
+      <div class="row">
+        <div class="col-12">
+          <button class="btn btn-big btn-gray">
+            이전
+          </button>
+          <button class="btn btn-big btn-crimson">
+            저장
+          </button>
+        </div>
+      </div>
+      <div class="row my-3">
+        <div class="col-12">
+          <button class="btn btn-big btn-gray" disabled>
+            이전
+          </button>
+          <button class="btn btn-big btn-crimson" disabled>
+            저장
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-4 my-3">
+      <h5>중간버튼</h5>
+      <div class="row">
+        <div class="col-12">
+          <button class="btn btn-middle-long btn-white">
+            <fa-icon [icon]="faPlus" class="fa-1x icon-btn"></fa-icon>
+            추가하기
+          </button>
+          <button class="btn btn-middle-short btn-white">
+            취소
+          </button>
+          <button class="btn btn-middle-short btn-black">
+            확인
+          </button>
+        </div>
+      </div>
+      <div class="row my-3">
+        <div class="col-12">
+          <button class="btn btn-middle-long btn-white" disabled>
+            <fa-icon [icon]="faPlus" class="fa-1x icon-btn"></fa-icon>
+            추가하기
+          </button>
+          <button class="btn btn-middle-short btn-white" disabled>
+            취소
+          </button>
+          <button class="btn btn-middle-short btn-black" disabled>
+            확인
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-4 my-3">
+      <h5>중간버튼</h5>
+      <div class="row">
+        <div class="col-12">
+          <button class="btn btn-small-long btn-black">
+            대량전송
+          </button>
+          <button class="btn btn-small-long btn-white">
+            취소
+          </button>
+          <button class="btn btn-small-short btn-gray">
+            로그아웃
+          </button>
+          <button class="btn btn-verysmall btn-white">
+            모두적용
+          </button>
+        </div>
+      </div>
+      <div class="row my-3">
+        <div class="col-12">
+          <button class="btn btn-small-long btn-black" disabled>
+            대량전송
+          </button>
+          <button class="btn btn-small-long btn-white" disabled>
+            취소
+          </button>
+          <button class="btn btn-small-short btn-gray" disabled>
+            로그아웃
+          </button>
+          <button class="btn btn-verysmall btn-white" disabled>
+            모두적용
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <h1>
+        INPUT 스타일 가이드
+      </h1>
+    </div>
+    <div class="col-6">
+      <div class="form-group">
+        <label for="formGroupExampleInput">필수입력</label>
+        <input type="text" class="form-control" placeholder="부동산임대차계약서">
+      </div>
+      <div class="form-group">
+        <label for="formGroupExampleInput">필수입력</label>
+        <input type="text" class="form-control" disabled placeholder="부동산임대차계약서">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <label>근로자</label>
+        <div class="form-inline">
+
+          <div class="form-group mb-2 mx-1">
+            <select for="inputselect0" class="form-control">
+              <option>선택</option>
+            </select>
+            <label for="inputselect0" class="mx-1">년</label>
+          </div>
+
+          <div class="form-group mb-2 mx-1">
+            <select for="inputselect0" class="form-control">
+              <option>선택</option>
+            </select>
+            <label for="inputselect0" class="mx-1">월</label>
+          </div>
+
+          <div class="form-group mb-2 mx-1">
+            <select for="inputselect0" class="form-control">
+              <option>선택</option>
+            </select>
+            <label for="inputselect0" class="mx-1">일</label>
+          </div>
+
+          <div class="form-group mx-sm-3 mb-2 mx-4">
+            <label>~</label>
+          </div>
+
+          <div class="form-group mb-2 mx-1">
+            <select for="inputselect0" class="form-control">
+              <option>선택</option>
+            </select>
+            <label for="inputselect0" class="mx-1">년</label>
+          </div>
+
+          <div class="form-group mb-2 mx-1">
+            <select for="inputselect0" class="form-control">
+              <option>선택</option>
+            </select>
+            <label for="inputselect0" class="mx-1">월</label>
+          </div>
+
+          <div class="form-group mb-2 mx-1">
+            <select for="inputselect0" class="form-control">
+              <option>선택</option>
+            </select>
+            <label for="inputselect0" class="mx-1">일</label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <h1>
+        Content 화살표 및 액션 icon
+      </h1>
+    </div>
+    <div class="col-6">
+      <div class="row">
+        <div class="col-2">
+          <div class="row">
+            <div class="col-12">
+              <button class="btn btn-circle-big btn-white-circle">
+                <fa-icon [icon]="faArrowLeft" class="fa-1x"></fa-icon>
+              </button>
+              <button class="btn btn-circle-big btn-white-circle">
+                <fa-icon [icon]="faArrowRight" class="fa-1x"></fa-icon>
+              </button>
+
+            </div>
+            <div class="col-12">
+              <button class="btn btn-circle-big btn-white-circle" disabled>
+                <fa-icon [icon]="faArrowLeft" class="fa-1x"></fa-icon>
+              </button>
+              <button class="btn btn-circle-big btn-white-circle" disabled>
+                <fa-icon [icon]="faArrowRight" class="fa-1x"></fa-icon>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-2">
+          <div class="row">
+            <div class="col-12">
+              <button class="btn btn-circle-small btn-white-circle">
+                <fa-icon [icon]="faPlus" class="fa-1x"></fa-icon>
+              </button>
+              <button class="btn btn-circle-small btn-white-circle">
+                <fa-icon [icon]="faMinus" class="fa-1x"></fa-icon>
+              </button>
+
+            </div>
+            <div class="col-12">
+              <button class="btn btn-circle-small btn-white-circle" disabled>
+                <fa-icon [icon]="faPlus" class="fa-1x"></fa-icon>
+              </button>
+              <button class="btn btn-circle-small btn-white-circle" disabled>
+                <fa-icon [icon]="faMinus" class="fa-1x"></fa-icon>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-1">
+          <div class="row">
+            <div class="col-12">
+              <button class="btn btn-circle-small btn-white-circle">
+                <fa-icon [icon]="faPrint" class="fa-1x"></fa-icon>
+              </button>
+            </div>
+            <div class="col-12">
+              <button class="btn btn-circle-small btn-white-circle" disabled>
+                <fa-icon [icon]="faPrint" class="fa-1x"></fa-icon>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-1">
+          <div class="row">
+            <div class="col-12">
+              <button class="btn btn-circle-small btn-black">
+                <fa-icon [icon]="faTimes" class="fa-1x"></fa-icon>
+              </button>
+            </div>
+            <div class="col-12">
+              <button class="btn btn-circle-small btn-black" disabled>
+                <fa-icon [icon]="faTimes" class="fa-1x"></fa-icon>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="row">
+            <div class="col-12">
+              <button class="btn btn-circle-small btn-lightred">
+                <fa-icon [icon]="faChevronLeft" class="fa-1x"></fa-icon>
+              </button>
+              <button class="btn btn-circle-small btn-lightred">
+                <fa-icon [icon]="faChevronRight" class="fa-1x"></fa-icon>
+              </button>
+              <button class="btn btn-circle-small btn-lightred">
+                <fa-icon [icon]="faUndo" class="fa-1x"></fa-icon>
+              </button>
+            </div>
+            <div class="col-12">
+              <button class="btn btn-circle-small btn-lightred" disabled>
+                <fa-icon [icon]="faChevronLeft" class="fa-1x"></fa-icon>
+              </button>
+              <button class="btn btn-circle-small btn-lightred" disabled>
+                <fa-icon [icon]="faChevronRight" class="fa-1x"></fa-icon>
+              </button>
+              <button class="btn btn-circle-small btn-lightred" disabled>
+                <fa-icon [icon]="faUndo" class="fa-1x"></fa-icon>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="col-6">
+        <button class="btn btn-big btn-bt-arrow" type="button">
+          나에게 요청된 전자계약
+        </button>
+        <button class="btn btn-big btn-bt-arrow-red" type="button">
+          요청한 전자계약
+        </button>
+    </div>
+  </div>
+</section>

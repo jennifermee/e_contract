@@ -1,0 +1,53 @@
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a pageScroll class="navbar-brand js-scroll-trigger"(click)="toHomepage('#page-top')" href="#page-top">
+      <img src="./assets/img/frontpage/logo.png">
+    </a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+      data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+      aria-label="Toggle navigation">
+      Menu
+      <fa-icon [icon]="faBars"></fa-icon>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a pageScroll class="nav-link js-scroll-trigger" (click)="toHomepage('#about')" href="#about">{{manu[selectl].about}}</a>
+        </li>
+        <li class="nav-item">
+          <a pageScroll class="nav-link js-scroll-trigger" (click)="toHomepage('#service')" href="#service">{{manu[selectl].service}}</a>
+        </li>
+        <li class="nav-item">
+          <a pageScroll class="nav-link js-scroll-trigger" (click)="toHomepage('#features')" href="#features">{{manu[selectl].features}}</a>
+        </li>
+        <li class="nav-item">
+          <a pageScroll class="nav-link js-scroll-trigger" (click)="toHomepage('#contact')" href="#contact">{{manu[selectl].contact}}</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            {{languages[selectl]}}
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item {{selectl == 'en' ? 'active': ''}}" href="#"
+              (click)="selectLanguages('en')">{{languages["en"]}}</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item {{selectl == 'kr' ? 'active': ''}}" href="#"
+              (click)="selectLanguages('kr')">{{languages["kr"]}}</a>
+          </div>
+        </li>
+      </ul>
+      <!-- <a href="http://157.245.194.72:4201" class="btn btn-sm btn btn-outline-primary" type="submit">Admin</a>
+      &nbsp; -->
+      <ng-container *ngIf="showbtn">
+        <a href="#/main" class="btn btn-sm btn btn-outline-info" type="submit">Dashboard</a>
+        &nbsp;
+      </ng-container>
+      <a href="#/register" class="" type="submit">Register</a>
+      &nbsp;
+      <a href="#/login" class="" type="submit">login</a>
+   </div>
+  </div>
+</nav>

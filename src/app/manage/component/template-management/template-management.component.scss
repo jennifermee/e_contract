@@ -1,0 +1,21 @@
+.custom-control-label:before {
+  background-color: red;
+}
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+  background-color: black;
+}
+
+.th-bg-001 {
+  background: #f7f7f7;
+}
+.tex-tit-tab-001 {
+  font-size: 14px;
+  font-weight: 400;
+  color: #101010;
+}
+
+.tex-itm-tab-001 {
+  font-size: 13px;
+  font-weight: 400;
+  color: #555555;
+}

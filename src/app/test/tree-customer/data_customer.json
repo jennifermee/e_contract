@@ -1,0 +1,101 @@
+{
+  "department": [
+    {
+      "d_id": 1,
+      "d_name": "Sales"
+    }, {
+      "d_id": 2,
+      "d_name": "Manufacturing"
+    }, {
+      "d_id": 3,
+      "d_name": "Production Control"
+    }, {
+      "d_id": 4,
+      "d_name": "Quality Control"
+    }, {
+      "d_id": 5,
+      "d_name": "Technical"
+    }, {
+      "d_id": 6,
+      "d_name": "Credit and Legal"
+    }
+  ],
+  "tames": [
+    {
+      "t_id": 1,
+      "t_name": "Sales Tames 1",
+      "d_id": 1
+    }, {
+      "t_id": 2,
+      "t_name": "Manufacturing Tames 1",
+      "d_id": 2
+    }, {
+      "t_id": 3,
+      "t_name": "Production Control Tames 1",
+      "d_id": 3
+    },{
+      "t_id": 4,
+      "t_name": "Quality Control Tames 1",
+      "d_id": 4
+    },{
+      "t_id": 5,
+      "t_name": "Technical Tames 1",
+      "d_id": 5
+    },{
+      "t_id": 6,
+      "t_name": "Credit and Legal 2",
+      "d_id": 6
+    }
+  ],
+  "emp": [
+    {
+      "e_id": 1,
+      "e_name": "Armando ",
+      "e_tel": "",
+      "e_mail": "",
+      "t_id": 1
+    }, {
+      "e_id": 2,
+      "e_name": "Tongdee",
+      "e_tel": "",
+      "e_mail": "",
+      "t_id": 1
+    }, {
+      "e_id": 3,
+      "e_name": "Fee 1",
+      "e_tel": "",
+      "e_mail": "",
+      "t_id": 2
+    }, {
+      "e_id": 4,
+      "e_name": "tae 1",
+      "e_tel": "",
+      "e_mail": "",
+      "t_id": 3
+    },{
+      "e_id": 5,
+      "e_name": "tae 2",
+      "e_tel": "",
+      "e_mail": "",
+      "t_id": 3
+    },{
+      "e_id": 6,
+      "e_name": "Fee 2",
+      "e_tel": "",
+      "e_mail": "",
+      "t_id": 4
+    },{
+      "e_id": 7,
+      "e_name": "Rosmee 2",
+      "e_tel": "",
+      "e_mail": "",
+      "t_id": 5
+    },{
+      "e_id": 8,
+      "e_name": "prateep 2",
+      "e_tel": "",
+      "e_mail": "",
+      "t_id": 6
+    }
+  ]
+}
